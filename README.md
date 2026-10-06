@@ -41,18 +41,20 @@ Your task is to containerize this existing application using Docker. You need to
 - To build the docker image run the command:
 
 ```bash
-
+docker build -t node-status-app .
 ```
 
 - To run your docker container in port 3000 run the command:
 
 ```bash
-
+docker run -d -p 3000:3000 --name node-status-container node-status-app
 ```
 
 ## Reflection Question
 **Answer the following question in the space below**: How does containerization with Docker differ from using virtual machines, and why might a development team choose Docker containers over VMs for deploying applications like the one you just containerized?
-
+- Docker containerization virtualizes the OS layer, whereas the VM's virtualize the underlying physical hardware layer. 
+- Containers are smaller, start in seconds, and use fewer resources. The same image runs identically on each machine.
+- The Node app I containerized started in seconds and I didn't even need a Node installed. 
 
 
 ## Application Requirements for Docker
@@ -92,3 +94,7 @@ docker-assignment/
 ```
 
 Good luck with your Docker containerization!
+
+
+![Home page](screenshots/docker_success.png)
+![API status](screenshots/docker_success2.png)
